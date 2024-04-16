@@ -3,7 +3,6 @@ namespace App\Services;
 
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 /**
  * @Service()

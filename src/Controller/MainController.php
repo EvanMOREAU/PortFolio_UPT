@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Repository\DocumentationsRepository;
+use App\Repository\DocumentCategoryRepository;
 use App\Repository\HappyClientsRepository;
 use App\Repository\HoursWorkedRepository;
 use App\Repository\SkillsRepository;
@@ -15,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class MainController extends AbstractController
 {
     #[Route('/', name: 'app_main')]
-    public function index(StudiesRepository $studiesRepository, ProjectRepository $projectRepository, SkillsRepository $skillsRepository, LanguagesRepository $languagesRepository, HoursWorkedRepository $hoursWorkedRepository, HappyClientsRepository $happyClientRepository): Response
+    public function index(StudiesRepository $studiesRepository, ProjectRepository $projectRepository, SkillsRepository $skillsRepository, LanguagesRepository $languagesRepository, HoursWorkedRepository $hoursWorkedRepository, HappyClientsRepository $happyClientRepository, DocumentCategoryRepository $documentCategoryRepository, DocumentationsRepository $documentationsRepository): Response
     {
         $fullUrl = $_SERVER['REQUEST_URI'];
         
@@ -24,6 +26,8 @@ class MainController extends AbstractController
             'url'             => $fullUrl,
             'studies' => $studiesRepository->findAll(),
             'projects' => $projectRepository->findAll(),
+            'documentationcategorys' => $documentCategoryRepository->findAll(),
+            'documentations' => $documentationsRepository->findAll(),
             'skills' => $skillsRepository->findAll(),
             'languages' => $languagesRepository->findAll(),
             'hour' => $hoursWorkedRepository->findOneBy(array(), array('id' => 'ASC')),

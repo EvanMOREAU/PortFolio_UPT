@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-#[Route('/documentations')]
+#[Route('/documentation')]
 class DocumentationsController extends AbstractController
 {
     #[Route('/', name: 'app_documentations_index', methods: ['GET'])]
