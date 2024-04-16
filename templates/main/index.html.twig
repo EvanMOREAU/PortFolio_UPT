@@ -378,31 +378,19 @@
                 </div>
                 <div class="portfolio-container"> 
                     {% for documentation in documentations %}
-                        <div class="col-md-6 col-lg-4 {{ documentation.getCategory().name }} all">
+                        <div class="col-md-6 col-lg-4 {{ documentation.getCategory().name }} new  all">
                             <div class="portfolio-item">
                                 <img src="/uploads/images/{{ documentation.getCategory().img }}" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
                                 <div class="content-holder">
                                     <a class="img-popup" href="/assets/imgs/web-1.jpg"></a>
                                     <div class="text-holder">
-                                        <h6 class="title">WEB</h6>
-                                        <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                                        <h6 class="title">{{ documentation.name }}</h6>
+                                        <button class="btn btn-secondary" onClick="redirectToPage('{{ path('pdf_files', { filename: documentation.pdf }) }}')">Ouvrir</button>
                                     </div>
                                 </div>   
                             </div>             
                         </div>
                     {% endfor %}
-                    <div class="col-md-6 col-lg-4 new">
-                        <div class="portfolio-item">
-                            <img src="/assets/imgs/web-2.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="/assets/imgs/web-2.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">WEB</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                </div>
-                            </div> 
-                        </div>                         
-                    </div>
                 </div> 
             </div>  
         </div>            
@@ -551,6 +539,7 @@
 
 	<!-- core  -->
     <script src="/assets/vendors/jquery/jquery-3.4.1.js"></script>
+        <script src="/addons/js/redirectToPage.js"></script>
     <script src="/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
     <!-- bootstrap 3 affix -->

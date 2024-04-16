@@ -3,3 +3,10 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+pdf_files:
+    path: /uploads/documents/{filename}
+    controller: Symfony\Component\HttpFoundation\File\File::createFromPath
+    defaults:
+        filename: null
+    requirements:
+        filename: .+
