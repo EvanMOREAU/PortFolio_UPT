@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Documentations{% endblock %}
+
+{% block body %}
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/heroes/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="/addons/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <center>
+    <div class="notification">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Mes documentations</div>
+        <div class="notibody">
+            Tout au long de ma formation, j'ai mis un point d'honneur à réaliser des ocumentations visuellement intéréssantes, 
+            et lisibles. J'ai réalisé ces ocumentations sur plusieurs plateformes tel que Canva ou Gitbook. Je les mets à disposition, mais je précise 
+            que celles-ci ne sont pas à des fins commerciales.
+        </div>
+    </div>
+  </center>
+  {% for document_categorie in document_categories %}
+    <br>
+    <div class="container my-5" style='width: 80%; color: white;'>
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis">{{ document_categorie.name }}</h1>
+        <p class="lead">{{ document_categorie.description }}</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+          <a type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold" href='documentations/doc/{{ document_categorie.id }}'>Voir</a>
+          <a type="button" class="btn btn-outline-secondary btn-lg px-4" href="documentcategory/{{ document_categorie.id }}/edit">Modififier</a>
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+          <img class="rounded-lg-3" src="/uploads/images/{{ document_categorie.img }}" alt="" width="100%">
+      </div>
+    </div>
+  </div> 
+  {% endfor %}
+    {# <a href="{{ path('app_document_categoriess_new') }}">Create new</a> #}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Studies{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Create new Studies</h1>
+
+    {{ include('studies/_form.html.twig') }}
+
+    <a href="{{ path('app_studies_index') }}">back to list</a>
+</div>
+{% endblock %}

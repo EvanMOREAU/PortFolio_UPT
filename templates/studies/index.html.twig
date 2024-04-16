@@ -1,0 +1,153 @@
+  {% extends 'base.html.twig' %}
+
+  {% block titlestudie %}Hello StudiesController!{% endblock %}
+
+  {% block body %}
+  <style>
+   :root {
+    --primary-color: #212121;
+    --background-color: #111;
+    --font: sans-serif;
+}
+/* body {
+    background: var(--background-color);
+    font-family: var(--font);
+    justify-content: center;
+} */
+
+/* timelinestudie Container */
+.timelinestudie {
+    background: var(--primary-color);
+    padding: 20px;
+}
+
+/* cardstudie container */
+.cardstudie {
+    position: relative;
+    max-width: 70%;
+}
+
+/* setting padding based on even or odd */
+.cardstudie:nth-child(odd) {
+    padding: 30px 0 30px 30px;
+}
+
+.cardstudie:nth-child(even) {
+    padding: 30px 30px 30px 0;
+}
+
+/* Global ::before */
+.cardstudie::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    border: solid orangered;
+}
+
+/* Setting the border of top, bottom, left */
+.cardstudie:nth-child(odd)::before {
+    left: 0px;
+    top: -4.5px;
+    bottom: -4.5px;
+    border-width: 5px 0 5px 5px;
+    border-radius: 50px 0 0 50px;
+}
+
+/* Setting the border of top, bottom, right */
+.cardstudie:nth-child(even)::before {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+}
+
+/* Removing the border if it is the first cardstudie */
+.cardstudie:first-child::before {
+    border-top: 0;
+    border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last cardstudie  and it's odd */
+.cardstudie:last-child:nth-child(odd)::before {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last cardstudie  and it's even */
+.cardstudie:last-child:nth-child(even)::before {
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Information about the timelinestudie */
+.infostudie {
+    display: flex;
+    flex-direction: column;
+    background: #333;
+    color: gray;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* titlestudie of the cardstudie */
+.titlestudie {
+    color: orangered;
+    position: relative;
+}
+
+/* timelinestudie dot  */
+.titlestudie::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 999px;
+    border: 3px solid orangered;
+}
+
+/* text right if the cardstudie is even  */
+/*  */
+
+/* setting dot to the left if the cardstudie is odd */
+.cardstudie:nth-child(odd)>.infostudie>.titlestudie::before {
+    left: -45px;
+}
+
+/* setting dot to the right if the cardstudie is odd */
+.cardstudie:nth-child(even)>.infostudie>.titlestudie::before {
+    right: -45px;
+}
+  </style><br>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<center>
+  <center>
+    <div class="notification">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Mon parcour</div>
+        <div class="notibody">
+           Mon parcour n'est pas fixé dans l'informatique. En effet j'ai réalisé un BAC STAV (Science et Technologie de l'Agronomie et du Vivant) avant de reprendre le BTS SIO. Je suis donc diplomé en agricole, et étudiant en informatique.
+        </div>
+    </div>
+  </center><br>
+    <div class="outerstudie">
+    {% for studie in studies %}
+      <div class="cardstudie">
+        <div class="infostudie">
+          <h3 class="titlestudie" align='center'>{{ studie.place }} {{ studie.years }}</h3>
+          <p>Adresse : {{ studie.address }}
+          <br> Info : {{ studie.text }}
+          {% if studie.website != '' %}<br><a href='{{ studie.website }}'>Site Internet</a>{% endif %}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+</center>
+
+  
+
+
+  {% endblock %}
