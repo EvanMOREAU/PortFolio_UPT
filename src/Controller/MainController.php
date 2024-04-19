@@ -20,7 +20,8 @@ class MainController extends AbstractController
     public function index(StudiesRepository $studiesRepository, ProjectRepository $projectRepository, SkillsRepository $skillsRepository, LanguagesRepository $languagesRepository, HoursWorkedRepository $hoursWorkedRepository, HappyClientsRepository $happyClientRepository, DocumentCategoryRepository $documentCategoryRepository, DocumentationsRepository $documentationsRepository): Response
     {
         $fullUrl = $_SERVER['REQUEST_URI'];
-        
+        $rss = simplexml_load_file('http://feeds.feedburner.com/symfony/blog');
+
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
             'url'             => $fullUrl,
@@ -32,6 +33,7 @@ class MainController extends AbstractController
             'languages' => $languagesRepository->findAll(),
             'hour' => $hoursWorkedRepository->findOneBy(array(), array('id' => 'ASC')),
             'happy' => $happyClientRepository->findOneBy(array(), array('id' => 'ASC')),
+            'rss_items' => $rss->channel->item ?? [], // Passer les éléments du flux RSS à Twig
         ]);
     }
 }
