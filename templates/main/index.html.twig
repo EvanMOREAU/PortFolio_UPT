@@ -1,264 +1,382 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Hello MainController!
+{% endblock %}
 
 {% block body %}
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with JohnDoe landing page.">
-    <meta name="author" content="Devcrud">
-    <title>Evan Moreau</title>
-    <!-- font icons -->
-    <link rel="stylesheet" href="/assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + JohnDoe main styles -->
-	<link rel="stylesheet" href="/assets/css/johndoe.css">
-</head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <a href="components.html" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600"><i class="ti-shift-left-alt"></i> Components</a>
-    <header class="header">
-        <div class="container">
-            <ul class="social-icons pt-3">
-                <li class="social-item"><a class="social-link text-light" href="https://www.linkedin.com/in/evan-moreau-933336271/" target="_blank"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="https://github.com/EvanMOREAU" target="_blank"><i class="ti-github" aria-hidden="true"></i></a></li>
-            </ul>  
-            <div class="header-content">
-                <h4 class="header-subtitle" >Bonjour, je suis</h4>
-                <h1 class="header-title">Evan Moreau</h1>
-                <h6 class="header-mono" >Étudiant | BTS SIO</h6>
-                <button class="btn btn-primary btn-rounded"><i class="ti-printer pr-2"></i>PDF Résumé</button>
-            </div>
-        </div>
-    </header>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
-        <div class="container">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#resume" class="nav-link">Resume</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav brand">
-                    <img src="/images/pic01.jpg" alt="" class="brand-img">
-                    <li class="brand-txt">
-                        <h5 class="brand-title">Evan Moreau</h5>
-                        <div class="brand-subtitle">Étudiant</div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="#portfolio" class="nav-link">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#blog" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item last-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container-fluid">
-        <div id="about" class="row about-section">
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">Qui suis-je ?</h3>
-                <span class="line mb-5"></span>
-                <h5 class="mb-3">Étidiant en BTS SIO (Service Informatique aux Organisations) 2ème année</h5>
-                <p class="mt-20">Je suis actuellement en option SLAM (Solution Logicielle et Application Métier)</p>
-                <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i>Télécharger mon CV</button>
-            </div>
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">Informations personnelles</h3>
-                <span class="line mb-5"></span>
-                <ul class="mt40 info list-unstyled">
-                    <li><span>Date de naissance</span> : 27/12/2004</li>
-                    <li><span>Email</span> : evan.moreau@etik.com</li>
-                    <li><span>Phone</span> : 06 38 34 48 93</li>
-                    <li><span>Linkedin</span> : Evan Moreau </li>
-                    <li><span>Address</span> :  15 rue du jardin des plantes, 50300, Avranches</li>
-                    <li><span>Linkedin</span> : <a class="social-link" href="https://www.linkedin.com/in/evan-moreau-933336271/" target="_blank"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
-                    <li><span>Github</span> :  <a class="social-link" href="https://github.com/EvanMOREAU" target="_blank"><i class="ti-github" aria-hidden="true"></i></a></li>
-                </ul>
-                    
-            </div>
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">Mes compétences</h3>
-                <span class="line mb-5"></span>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-desktop icon-lg"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Symfony</h6>
-                        <p class="subtitle"> Création de site sous framework Symfony</p>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-paint-bucket icon-lg"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Développement Web</h6>
-                        <p class="subtitle">Développement web (HTML | JS | CSS | PHP)</p>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-linux icon-lg"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Gestion hébergement</h6>
-                        <p class="subtitle">Gestion d'un hébergement Apache/Nginx</p>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			<meta name="description" content="Start your development with JohnDoe landing page.">
+			<meta name="author" content="Devcrud">
+			<title>Evan Moreau</title>
+			<!-- font icons -->
+			<link
+			rel="stylesheet" href="/assets/vendors/themify-icons/css/themify-icons.css">
+			<!-- Bootstrap + JohnDoe main styles -->
+			<link rel="stylesheet" href="/assets/css/johndoe.css">
+			<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+			<style>
+				.card {
+					background: white;
+					padding: 0.4em;
+					border-radius: 6px;
+				}
 
-    <!--Resume Section-->
-    <section class="section" id="resume">
-        <div class="container">
-            <h2 class="mb-5"><span class="text-danger">Mon</span> Résumé</h2>
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                       <div class="card-header">
-                            <div class="mt-2">
-                                <h4>Scolaire</h4>
-                                <span class="line"></span>  
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            {% for studie in studies %}
-                                <h6 class="title text-danger">{{ studie.years }}</h6>
-                                <P>{{ studie.place }}</P>
-                                <P class="subtitle">{{ studie.address }}<br>{{ studie.text }}</P>
-                                {% if not loop.last %}
-                                    <hr>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                       <div class="card-header">
-                            <div class="mt-2">
-                                <h4>Projets</h4>
-                                <span class="line"></span>  
-                            </div>
-                        </div>
-                        <div class="card-body">
-						    {% for project in projects %}
-								<h6 class="title text-danger">{{ project.year|date('Y') }}</h6>
-                                <P>{{ project.name }}</P>
-                                <P class="subtitle">{% if project.link !="" %}<a href="{{ project.link }}" target="_blank">Lien ici</a><br>{% endif %}{{ project.description }}</P>
-                                {% if not loop.last %}
-                                    <hr>
-                                {% endif %}
-                            {% endfor %}
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card">
-                       <div class="card-header">
-                            <div class="pull-left">
-                                <h4 class="mt-2">Compétences</h4>
-                                <span class="line"></span>  
-                            </div>
-                        </div>
-                        <div class="card-body pb-2">
-                            {% for skill in skills %}
-                                <h6>{{ skill.name }}</h6>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar bg-danger" role="progressbar" style="width: {{skill.value}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="card">
-                       <div class="card-header">
-                            <div class="pull-left">
-                                <h4 class="mt-2">Langages</h4>
-                                <span class="line"></span>  
-                            </div>
-                        </div>
-                        <div class="card-body pb-2">
-                            {% for language in languages %}
-                                <h6>{{ language.name }}</h6>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar bg-danger" role="progressbar" style="width: {{ language.value }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                .card-image {
+                width: 50%;  /* Vous pouvez ajuster cela selon vos besoins */
+                height: 130px;
+                border-radius: 6px 6px 0 0;
+                display: block;  /* Pour garantir que l'image est un élément de bloc */
+                margin: 0 auto;  /* Centre l'image horizontalement */
+                transition: transform 0.2s ease;  /* Transition pour l'effet de survol */
+                }
 
-    <section class="section bg-dark text-center">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-6 col-lg-3">
-                    <div class="row ">
-                        <div class="col-5 text-right text-light border-right py-3">
-                            <div class="m-auto"><i class="ti-alarm-clock icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">{{ hour.value }}</h1>
-                            <p class="text-light mb-1">Heures passés sur les projets</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-5 text-right text-light border-right py-3">
-                            <div class="m-auto"><i class="ti-layers-alt icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">{{ projects|length }}</h1>
-                            <p class="text-light mb-1">Projets travaillés</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-5 text-right text-light border-right py-3">
-                            <div class="m-auto"><i class="ti-face-smile icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40">{{ happy.value }}</h1>
-                            <p class="text-light mb-1">Retours positifs</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-5 text-right text-light border-right py-3">
-                            <div class="m-auto"><i class="ti-heart-broken icon-xl"></i></div>
-                        </div>
-                        <div class="col-7 text-left py-3">
-                            <h1 class="text-danger font-weight-bold font40"> +∞</h1>
-                            <p class="text-light mb-1">Cafés bu</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                .card-image:hover {
+                transform: scale(0.98);  /* L'effet de réduction lors du survol */
+                }
 
-    <section class="section" id="service">
+				.category {
+					text-transform: uppercase;
+					font-size: 0.7em;
+					font-weight: 600;
+					color: rgb(63, 121, 230);
+					padding: 10px 7px 0;
+				}
+
+				.category:hover {
+					cursor: pointer;
+				}
+
+				.heading {
+					font-weight: 600;
+					color: rgb(88, 87, 87);
+					padding: 7px;
+				}
+
+				.heading:hover {
+					cursor: pointer;
+				}
+
+				.author {
+					color: gray;
+					font-weight: 400;
+					font-size: 11px;
+					padding-top: 20px;
+				}
+
+				.name {
+					font-weight: 600;
+				}
+
+				.name:hover {
+					cursor: pointer;
+				}
+			</style>
+		</head>
+		<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+			<a href="components.html" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600">
+				<i class="ti-shift-left-alt"></i>
+				Components</a>
+			<header class="header">
+				<div class="container">
+					<ul class="social-icons pt-3">
+						<li class="social-item">
+							<a class="social-link text-light" href="https://www.linkedin.com/in/evan-moreau-933336271/" target="_blank">
+								<i class="ti-linkedin" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li class="social-item">
+							<a class="social-link text-light" href="https://github.com/EvanMOREAU" target="_blank">
+								<i class="ti-github" aria-hidden="true"></i>
+							</a>
+						</li>
+					</ul>
+					<div class="header-content">
+						<h4 class="header-subtitle">Bonjour, je suis</h4>
+						<h1 class="header-title">Evan Moreau</h1>
+						<h6 class="header-mono">Étudiant | BTS SIO</h6>
+						<button class="btn btn-primary btn-rounded">
+							<i class="ti-printer pr-2"></i>PDF Résumé</button>
+					</div>
+				</div>
+			</header>
+			<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+				<div class="container">
+					<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item">
+								<a href="#home" class="nav-link">Home</a>
+							</li>
+							<li class="nav-item">
+								<a href="#about" class="nav-link">About</a>
+							</li>
+							<li class="nav-item">
+								<a href="#resume" class="nav-link">Resume</a>
+							</li>
+						</ul>
+						<ul class="navbar-nav brand">
+							<img src="/images/pic01.jpg" alt="" class="brand-img">
+							<li class="brand-txt">
+								<h5 class="brand-title">Evan Moreau</h5>
+								<div class="brand-subtitle">Étudiant</div>
+							</li>
+						</ul>
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item">
+								<a href="#portfolio" class="nav-link">Portfolio</a>
+							</li>
+							<li class="nav-item">
+								<a href="#blog" class="nav-link">Blog</a>
+							</li>
+							<li class="nav-item last-item">
+								<a href="#contact" class="nav-link">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div class="container-fluid">
+				<div id="about" class="row about-section">
+					<div class="col-lg-4 about-card">
+						<h3 class="font-weight-light">Qui suis-je ?</h3>
+						<span class="line mb-5"></span>
+						<h5 class="mb-3">Étidiant en BTS SIO (Service Informatique aux Organisations) 2ème année</h5>
+						<p class="mt-20">Je suis actuellement en option SLAM (Solution Logicielle et Application Métier)</p>
+						<button class="btn btn-outline-danger">
+							<i class="icon-down-circled2 "></i>Télécharger mon CV</button>
+					</div>
+					<div class="col-lg-4 about-card">
+						<h3 class="font-weight-light">Informations personnelles</h3>
+						<span class="line mb-5"></span>
+						<ul class="mt40 info list-unstyled">
+							<li>
+								<span>Date de naissance</span>
+								: 27/12/2004</li>
+							<li>
+								<span>Email</span>
+								: evan.moreau@etik.com</li>
+							<li>
+								<span>Phone</span>
+								: 06 38 34 48 93</li>
+							<li>
+								<span>Linkedin</span>
+								: Evan Moreau
+							</li>
+							<li>
+								<span>Address</span>
+								:  15 rue du jardin des plantes, 50300, Avranches</li>
+							<li>
+								<span>Linkedin</span>
+								:
+								<a class="social-link" href="https://www.linkedin.com/in/evan-moreau-933336271/" target="_blank">
+									<i class="ti-linkedin" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li>
+								<span>Github</span>
+								:
+								<a class="social-link" href="https://github.com/EvanMOREAU" target="_blank">
+									<i class="ti-github" aria-hidden="true"></i>
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					<div class="col-lg-4 about-card">
+						<h3 class="font-weight-light">Mes compétences</h3>
+						<span class="line mb-5"></span>
+						<div class="row">
+							<div class="col-1 text-danger pt-1">
+								<i class="ti-desktop icon-lg"></i>
+							</div>
+							<div class="col-10 ml-auto mr-3">
+								<h6>Symfony</h6>
+								<p class="subtitle">
+									Création de site sous framework Symfony</p>
+								<hr>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-1 text-danger pt-1">
+								<i class="ti-paint-bucket icon-lg"></i>
+							</div>
+							<div class="col-10 ml-auto mr-3">
+								<h6>Développement Web</h6>
+								<p class="subtitle">Développement web (HTML | JS | CSS | PHP)</p>
+								<hr>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-1 text-danger pt-1">
+								<i class="ti-linux icon-lg"></i>
+							</div>
+							<div class="col-10 ml-auto mr-3">
+								<h6>Gestion hébergement</h6>
+								<p class="subtitle">Gestion d'un hébergement Apache/Nginx</p>
+								<hr>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--Resume Section-->
+			<section class="section" id="resume">
+				<div class="container">
+					<h2 class="mb-5">
+						<span class="text-danger">Mon</span>
+						Résumé</h2>
+					<div class="row">
+						<div class="col-md-6 col-lg-4">
+							<div class="card">
+								<div class="card-header">
+									<div class="mt-2">
+										<h4>Scolaire</h4>
+										<span class="line"></span>
+									</div>
+								</div>
+								<div class="card-body">
+									{% for studie in studies %}
+										<h6 class="title text-danger">{{ studie.years }}</h6>
+										<P>{{ studie.place }}</P>
+										<P class="subtitle">{{ studie.address }}<br>{{ studie.text }}</P>
+										{% if not loop.last %}
+											<hr>
+										{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div class="card">
+								<div class="card-header">
+									<div class="mt-2">
+										<h4>Projets</h4>
+										<span class="line"></span>
+									</div>
+								</div>
+								<div class="card-body">
+									{% for project in projects %}
+										<h6 class="title text-danger">{{ project.year|date('Y') }}</h6>
+										<P>{{ project.name }}</P>
+										<P class="subtitle">
+											{% if project.link !="" %}
+												<a href="{{ project.link }}" target="_blank">Lien ici</a><br>
+											{% endif %}
+											{{ project.description }}</P>
+										{% if not loop.last %}
+											<hr>
+										{% endif %}
+									{% endfor %}
+
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="card">
+								<div class="card-header">
+									<div class="pull-left">
+										<h4 class="mt-2">Compétences</h4>
+										<span class="line"></span>
+									</div>
+								</div>
+								<div class="card-body pb-2">
+									{% for skill in skills %}
+										<h6>{{ skill.name }}</h6>
+										<div class="progress mb-3">
+											<div class="progress-bar bg-danger" role="progressbar" style="width: {{skill.value}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header">
+									<div class="pull-left">
+										<h4 class="mt-2">Langages</h4>
+										<span class="line"></span>
+									</div>
+								</div>
+								<div class="card-body pb-2">
+									{% for language in languages %}
+										<h6>{{ language.name }}</h6>
+										<div class="progress mb-3">
+											<div class="progress-bar bg-danger" role="progressbar" style="width: {{ language.value }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section bg-dark text-center">
+				<div class="container">
+					<div class="row text-center">
+						<div class="col-md-6 col-lg-3">
+							<div class="row ">
+								<div class="col-5 text-right text-light border-right py-3">
+									<div class="m-auto">
+										<i class="ti-alarm-clock icon-xl"></i>
+									</div>
+								</div>
+								<div class="col-7 text-left py-3">
+									<h1 class="text-danger font-weight-bold font40">{{ hour.value }}</h1>
+									<p class="text-light mb-1">Heures passés sur les projets</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3">
+							<div class="row">
+								<div class="col-5 text-right text-light border-right py-3">
+									<div class="m-auto">
+										<i class="ti-layers-alt icon-xl"></i>
+									</div>
+								</div>
+								<div class="col-7 text-left py-3">
+									<h1 class="text-danger font-weight-bold font40">{{ projects|length }}</h1>
+									<p class="text-light mb-1">Projets travaillés</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3">
+							<div class="row">
+								<div class="col-5 text-right text-light border-right py-3">
+									<div class="m-auto">
+										<i class="ti-face-smile icon-xl"></i>
+									</div>
+								</div>
+								<div class="col-7 text-left py-3">
+									<h1 class="text-danger font-weight-bold font40">{{ happy.value }}</h1>
+									<p class="text-light mb-1">Retours positifs</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3">
+							<div class="row">
+								<div class="col-5 text-right text-light border-right py-3">
+									<div class="m-auto">
+										<i class="ti-heart-broken icon-xl"></i>
+									</div>
+								</div>
+								<div class="col-7 text-left py-3">
+									<h1 class="text-danger font-weight-bold font40">
+										+∞</h1>
+									<p class="text-light mb-1">Cafés bu</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section" id="service">
         <div class="container">
             <h2 class="mb-5 pb-4"><span class="text-danger">Ma</span> Formation</h2>
             <div class="row">
@@ -361,154 +479,213 @@
             </div>
         </div>
     </section>
-    <!-- Portfolio Section -->
-    <section class="section bg-custom-gray" id="portfolio">
-        <div class="container">
-            <h1 class="mb-5"><span class="text-danger">Mes</span> Documentations    </h1>
-            <div class="portfolio">
-                <div class="filters">
-                    <a href="#" data-filter=".all" class="active">
-                        Tout
-                    </a>
-                {% for documentationcategory in documentationcategorys %}
-                    <a href="#" data-filter=".{{ documentationcategory.name }}">
-                        {{ documentationcategory.name }}
-                    </a>
-                {% endfor %}
-                </div>
-                <div class="portfolio-container"> 
-                    {% for documentation in documentations %}
-                        <div class="col-md-6 col-lg-4 {{ documentation.getCategory().name }} new  all">
-                            <div class="portfolio-item">
-                                <img src="/uploads/images/{{ documentation.getCategory().img }}" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                                <div class="content-holder">
-                                    <a class="img-popup" href="/assets/imgs/web-1.jpg"></a>
-                                    <div class="text-holder">
-                                        <h6 class="title">{{ documentation.name }}</h6>
-                                        <button class="btn btn-secondary" onClick="redirectToPage('{{ path('pdf_files', { filename: documentation.pdf }) }}')">Ouvrir</button>
-                                    </div>
-                                </div>   
-                            </div>             
+			<!-- Portfolio Section -->
+			<section class="section bg-custom-gray" id="portfolio">
+				<div class="container">
+					<h1 class="mb-5">
+						<span class="text-danger">Mes</span>
+						Documentations
+					</h1>
+					<div class="portfolio">
+						<div class="filters">
+							<a href="#" data-filter=".all" class="active">
+								Tout
+							</a>
+							{% for documentationcategory in documentationcategorys %}
+								<a href="#" data-filter=".{{ documentationcategory.name }}">
+									{{ documentationcategory.name }}
+								</a>
+							{% endfor %}
+						</div>
+						<div class="portfolio-container">
+							{% for documentation in documentations %}
+								<div class="col-md-6 col-lg-4 {{ documentation.getCategory().name }} new  all">
+									<div class="portfolio-item">
+										<img src="/uploads/images/{{ documentation.getCategory().img }}" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
+										<div class="content-holder">
+											<a class="img-popup" href="/assets/imgs/web-1.jpg"></a>
+											<div class="text-holder">
+												<h6 class="title">{{ documentation.name }}</h6>
+												<button class="btn btn-secondary" onclick="redirectToPage('{{ path('pdf_files', { filename: documentation.pdf }) }}')">Ouvrir</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</section>
+			<div
+				class="relative flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+				<!-- Utilisation de la grille Bootstrap -->
+				<div class="container">
+					<h1 class="mb-5">
+						<span class="text-danger">Mes</span>
+						logiciels/outils
+					</h1>
+					<div class="row">
+                        {% for logiciel in logiciels %}
+                        <!-- Divisée en colonnes, vous pouvez ajuster le nombre de colonnes par ligne -->
+                        <div class="col-md-4">
+                            <div class="card text-center"> <!-- Centrer le texte dans la carte -->
+                            <div class="card-image d-flex" align="center">
+                                <!-- Centrer l'image -->
+                                <img src="/uploads/images/{{logiciel.image}}" width="80%" class="d-flex mx-auto" />
+                            </div>
+                            <div class="heading">
+                                {{ logiciel.name }}
+                            </div>
+                            <div class="category text-danger">
+                                {{ logiciel.description }}
+                            </div>
+                            </div>
                         </div>
-                    {% endfor %}
-                </div> 
-            </div>  
-        </div>            
-    </section>
-    <!-- End of portfolio section -->
-
-    <section class="section" id="blog">
-        <div class="container">
-            <h2 class="mb-5">Flux <span class="text-danger">RSS</span></h2>
-            <div class="row">
-                {% for item in rss_items | slice(0, 3) %}
-                    <div class="blog-card">
-                        <div class="img-holder">
-                            <img src="/assets/imgs/Symfony.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        </div>
-                        <div class="content-holder">
-                            <h6 class="title">{{ item.title }}</h6>
-
-                            <p class="post-details">
-                                <a href="#">Le : {{ item.pubDate }} </a>
-                            </p>
-                            
-                            <p>{{ item.description }}</p>
-
-                            <a href="{{ item.link }}" class="read-more">Lire d'avantage <i class="ti-angle-double-right"></i></a>
-                        </div>
-                    </div><!-- end of blog wrapper -->
-                {% endfor %}
-
-            </div>
-        </div>
-    </section>
-
-    <div class="section contact bg-dark" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="contact-form-card">
-                        <h4 class="contact-title">Envoyer un message</h4>
-                        <form action="">
-                            <div class="form-group">
-                                <input  class="form-control" type="text" placeholder="Name *" required>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" type="email" placeholder="Email *" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="" placeholder="Message *" rows="7" required></textarea>
-                            </div>
-                            <div class="form-group ">
-                                <button type="submit" class="form-control btn btn-primary" >Envoyer</button>
-                            </div>
-                        </form>
+                        {% endfor %}
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="contact-info-card">
-                        <h4 class="contact-title">Me contacter</h4>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-mobile icon-md"></i>
-                            </div>
-                            <div class="col-10 ">
-                                <h6 class="d-inline">Téléphone : <br> <span class="text-muted">06 38 34 48 93</span></h6>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-map-alt icon-md"></i>
-                            </div>
-                            <div class="col-10">
-                                <h6 class="d-inline">Adresse :<br> <span class="text-muted">15 rue du jardin des plantes, 50300, Avranches</span></h6>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-envelope icon-md"></i>
-                            </div>
-                            <div class="col-10">
-                                <h6 class="d-inline">Email :<br> <span class="text-muted">evan.moreau@etik.com</span></h6>
-                            </div>
-                        </div>
-                        <ul class="social-icons pt-4">
-                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-facebook" aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-twitter" aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-google" aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-instagram" aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-github" aria-hidden="true"></i></a></li>
-                        </ul> 
-                    </div>
-                </div>
-            </div>
+			</div>
 
-        </div>
-    </div>
-    <footer class="footer py-3">
-        <div class="container">
-            <p class="small mb-0 text-light">
-                &copy; <script>document.write(new Date().getFullYear())</script> Created With <i class="ti-heart text-danger"></i> By <a href="http://devcrud.com" target="_blank"><span class="text-danger" title="Bootstrap 4 Themes and Dashboards">DevCRUD</span></a> 
-            </p>
-        </div>
-    </footer>
+			<!-- End of portfolio section -->
 
-	<!-- core  -->
-    <script src="/assets/vendors/jquery/jquery-3.4.1.js"></script>
-        <script src="/addons/js/redirectToPage.js"></script>
-    <script src="/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+			<section class="section" id="blog">
+				<div class="container">
+					<h2 class="mb-5">Flux
+						<span class="text-danger">RSS</span>
+					</h2>
+					<div class="row">
+						{% for item in rss_items | slice(0, 3) %}
+							<div class="blog-card">
+								<div class="img-holder">
+									<img src="/assets/imgs/Symfony.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+								</div>
+								<div class="content-holder">
+									<h6 class="title">{{ item.title }}</h6>
 
-    <!-- bootstrap 3 affix -->
-    <script src="/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+									<p class="post-details">
+										<a href="#">Le :
+											{{ item.pubDate }}
+										</a>
+									</p>
 
-    <!-- Isotope  -->
-    <script src="/assets/vendors/isotope/isotope.pkgd.js"></script>
+									<p>{{ item.description }}</p>
 
-    <!-- JohnDoe js -->
-    <script src="/assets/js/johndoe.js"></script>
+									<a href="{{ item.link }}" class="read-more">Lire d'avantage
+										<i class="ti-angle-double-right"></i>
+									</a>
+								</div>
+							</div>
+							<!-- end of blog wrapper -->
+						{% endfor %}
 
-</body>
-</html>
+					</div>
+				</div>
+			</section>
+
+			<div class="section contact bg-dark" id="contact">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8">
+							<div class="contact-form-card">
+								<h4 class="contact-title">Envoyer un message</h4>
+								<form action="">
+									<div class="form-group">
+										<input class="form-control" type="text" placeholder="Name *" required>
+									</div>
+									<div class="form-group">
+										<input class="form-control" type="email" placeholder="Email *" required>
+									</div>
+									<div class="form-group">
+										<textarea class="form-control" id="" placeholder="Message *" rows="7" required></textarea>
+									</div>
+									<div class="form-group ">
+										<button type="submit" class="form-control btn btn-primary">Envoyer</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="contact-info-card">
+								<h4 class="contact-title">Me contacter</h4>
+								<div class="row mb-2">
+									<div class="col-1 pt-1 mr-1">
+										<i class="ti-mobile icon-md"></i>
+									</div>
+									<div class="col-10 ">
+										<h6 class="d-inline">Téléphone :
+											<br>
+											<span class="text-muted">06 38 34 48 93</span>
+										</h6>
+									</div>
+								</div>
+								<div class="row mb-2">
+									<div class="col-1 pt-1 mr-1">
+										<i class="ti-map-alt icon-md"></i>
+									</div>
+									<div class="col-10">
+										<h6 class="d-inline">Adresse :<br>
+											<span class="text-muted">15 rue du jardin des plantes, 50300, Avranches</span>
+										</h6>
+									</div>
+								</div>
+								<div class="row mb-2">
+									<div class="col-1 pt-1 mr-1">
+										<i class="ti-envelope icon-md"></i>
+									</div>
+									<div class="col-10">
+										<h6 class="d-inline">Email :<br>
+											<span class="text-muted">evan.moreau@etik.com</span>
+										</h6>
+									</div>
+								</div>
+								<ul class="social-icons pt-4">
+									<li class="social-item">
+										<a class="social-link text-dark" href="#">
+											<i class="ti-facebook" aria-hidden="true"></i>
+										</a>
+									</li>
+									<li class="social-item">
+										<a class="social-link text-dark" href="#">
+											<i class="ti-twitter" aria-hidden="true"></i>
+										</a>
+									</li>
+									<li class="social-item">
+										<a class="social-link text-dark" href="#">
+											<i class="ti-google" aria-hidden="true"></i>
+										</a>
+									</li>
+									<li class="social-item">
+										<a class="social-link text-dark" href="#">
+											<i class="ti-instagram" aria-hidden="true"></i>
+										</a>
+									</li>
+									<li class="social-item">
+										<a class="social-link text-dark" href="#">
+											<i class="ti-github" aria-hidden="true"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- core  -->
+			<script src="/assets/vendors/jquery/jquery-3.4.1.js"></script>
+			<script src="/addons/js/redirectToPage.js"></script>
+			<script src="/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+			<!-- bootstrap 3 affix -->
+			<script src="/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+			<!-- Isotope  -->
+			<script src="/assets/vendors/isotope/isotope.pkgd.js"></script>
+
+			<!-- JohnDoe js -->
+			<script src="/assets/js/johndoe.js"></script>
+
+		</body>
+	</html>
 
 {% endblock %}

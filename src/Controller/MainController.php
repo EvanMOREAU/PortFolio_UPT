@@ -2,14 +2,15 @@
 
 namespace App\Controller;
 
-use App\Repository\DocumentationsRepository;
-use App\Repository\DocumentCategoryRepository;
-use App\Repository\HappyClientsRepository;
-use App\Repository\HoursWorkedRepository;
 use App\Repository\SkillsRepository;
 use App\Repository\ProjectRepository;
 use App\Repository\StudiesRepository;
+use App\Repository\LogicielRepository;
 use App\Repository\LanguagesRepository;
+use App\Repository\HoursWorkedRepository;
+use App\Repository\HappyClientsRepository;
+use App\Repository\DocumentationsRepository;
+use App\Repository\DocumentCategoryRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,7 +18,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class MainController extends AbstractController
 {
     #[Route('/', name: 'app_main')]
-    public function index(StudiesRepository $studiesRepository, ProjectRepository $projectRepository, SkillsRepository $skillsRepository, LanguagesRepository $languagesRepository, HoursWorkedRepository $hoursWorkedRepository, HappyClientsRepository $happyClientRepository, DocumentCategoryRepository $documentCategoryRepository, DocumentationsRepository $documentationsRepository): Response
+    public function index(StudiesRepository $studiesRepository, ProjectRepository $projectRepository, SkillsRepository $skillsRepository,
+    LanguagesRepository $languagesRepository, HoursWorkedRepository $hoursWorkedRepository, HappyClientsRepository $happyClientRepository, 
+    DocumentCategoryRepository $documentCategoryRepository, DocumentationsRepository $documentationsRepository, LogicielRepository $logicielRepository): Response
     {
         $fullUrl = $_SERVER['REQUEST_URI'];
         $rss = simplexml_load_file('http://feeds.feedburner.com/symfony/events');
@@ -58,6 +61,7 @@ class MainController extends AbstractController
             'hour' => $hoursWorkedRepository->findOneBy(array(), array('id' => 'ASC')),
             'happy' => $happyClientRepository->findOneBy(array(), array('id' => 'ASC')),
             'rss_items' => $rss_items,
+            'logiciels' => $logicielRepository->findAll(),
         ]);
     }
 }

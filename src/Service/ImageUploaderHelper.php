@@ -43,4 +43,26 @@ class ImageUploaderHelper {
         }
         return $errorMessage;
     }
+    public function uploadLogicielImage($form, $logiciel): String {
+        $errorMessage = "";
+        $imageFile = $form->get('image')->getData();
+
+        if ($imageFile) {
+            $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+           
+            $safeFilename = $this->slugger->slug($originalFilename);
+            $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFile->guessExtension();
+        
+            try {
+                $imageFile->move(
+                    $this->params->get('images_directory'),
+                    $newFilename
+                );
+            } catch (FileException $e) {
+               $errorMessage = $e->getMessage();
+            }
+            $logiciel->setImage($newFilename);
+        }
+        return $errorMessage;
+    }
 }
