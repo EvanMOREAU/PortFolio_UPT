@@ -1,0 +1,306 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!
+{% endblock %}
+
+{% block body %}
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			<meta name="description" content="Start your development with JohnDoe landing page.">
+			<meta name="author" content="Devcrud">
+			<title>Evan Moreau</title>
+			<!-- font icons -->
+			<link
+			rel="stylesheet" href="/assets/vendors/themify-icons/css/themify-icons.css">
+			<!-- Bootstrap + JohnDoe main styles -->
+			<link rel="stylesheet" href="/assets/css/johndoe.css">
+			<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+			<style>
+				.card {
+					background: white;
+					padding: 0.4em;
+					border-radius: 6px;
+				}
+
+                .card-image {
+                width: 50%;  /* Vous pouvez ajuster cela selon vos besoins */
+                height: 130px;
+                border-radius: 6px 6px 0 0;
+                display: block;  /* Pour garantir que l'image est un élément de bloc */
+                margin: 0 auto;  /* Centre l'image horizontalement */
+                transition: transform 0.2s ease;  /* Transition pour l'effet de survol */
+                }
+
+                .card-image:hover {
+                transform: scale(0.98);  /* L'effet de réduction lors du survol */
+                }
+
+				.category {
+					text-transform: uppercase;
+					font-size: 0.7em;
+					font-weight: 600;
+					color: rgb(63, 121, 230);
+					padding: 10px 7px 0;
+				}
+
+				.category:hover {
+					cursor: pointer;
+				}
+
+				.heading {
+					font-weight: 600;
+					color: rgb(88, 87, 87);
+					padding: 7px;
+				}
+
+				.heading:hover {
+					cursor: pointer;
+				}
+
+				.author {
+					color: gray;
+					font-weight: 400;
+					font-size: 11px;
+					padding-top: 20px;
+				}
+
+				.name {
+					font-weight: 600;
+				}
+
+				.name:hover {
+					cursor: pointer;
+				}
+			</style>
+		</head>
+		<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+			<a href="components.html" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600">
+				<i class="ti-shift-left-alt"></i>
+				Components</a>
+			<header class="header">
+				<div class="container">
+					<ul class="social-icons pt-3">
+						<li class="social-item">
+							<a class="social-link text-light" href="https://www.linkedin.com/in/evan-moreau-933336271/" target="_blank">
+								<i class="ti-linkedin" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li class="social-item">
+							<a class="social-link text-light" href="https://github.com/EvanMOREAU" target="_blank">
+								<i class="ti-github" aria-hidden="true"></i>
+							</a>
+						</li>
+					</ul>
+					<div class="header-content">
+						<h4 class="header-subtitle">Evan Moreau</h4>
+						<h1 class="header-title">Veille</h1>
+                        <h1 class="header-title">Technologique</h1>
+						<h6 class="header-mono">Étudiant | BTS SIO</h6>
+						<button class="btn btn-primary btn-rounded">
+							<i class="ti-printer pr-2"></i>PDF Résumé</button>
+					</div>
+				</div>
+			</header>
+			<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+				<div class="container">
+					<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item">
+								<a href="#home" class="nav-link">Accueil</a>
+							</li>
+							<li class="nav-item">
+								<a href="#about" class="nav-link">A propos</a>
+							</li>
+							<li class="nav-item">
+								<a href="#resume" class="nav-link">Résumé</a>
+							</li>
+							<li class="nav-item">
+								<a href="#formation" class="nav-link">Formation</a>
+							</li>
+						</ul>
+						<ul class="navbar-nav brand">
+							<img src="/images/pic01.jpg" alt="" class="brand-img">
+							<li class="brand-txt">
+								<h5 class="brand-title">Evan Moreau</h5>
+								<div class="brand-subtitle">Étudiant</div>
+							</li>
+						</ul>
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item">
+								<a href="#documentation" class="nav-link">Documentations</a>
+							</li>
+							<li class="nav-item">
+								<a href="#logiciel" class="nav-link">Logiciels</a>
+							</li>							
+							<li class="nav-item">
+								<a href="#rss" class="nav-link">RSS</a>
+							</li>
+							<li class="nav-item last-item">
+								<a href="#veille" class="nav-link">Veille</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- Portfolio Section -->
+			<section class="section bg-custom-gray" id="documentation">
+				<div class="container">
+					<h1 class="mb-5">
+						<span class="text-danger">Définition</span>
+						de "Veille technologique"
+					</h1>
+                    <p class="text-justify font-weight-normal text-muted">
+                        La veille technologique, un élément essentiel de la veille stratégique, consiste à garder un œil sur les avancées techniques et les nouveautés dans un secteur spécifique. Cela implique de surveiller, collecter, partager et diffuser des informations qui peuvent aider à anticiper ou à comprendre les changements dans des domaines tels que la recherche, le développement, les brevets, le lancement de nouveaux produits, les matériaux, les procédés, les concepts ou les innovations en matière de fabrication. Le but est d'évaluer comment ces changements pourraient affecter l'environnement ou les opérations d'une organisation.
+                    </p>
+				</div>
+                <div class="container">
+					<h1 class="mb-5">
+						<span class="text-danger">Sujet</span>
+						de la veille technologique
+					</h1>
+                    <h4 class="mb-5">
+						Pourquoi Symfony est le framework idéal pour le développement d'applications web ?
+					</h4>
+				</div>
+                <div class="container">
+					<h1 class="mb-5">
+						<span class="text-danger">Description</span>
+						de ma veille
+					</h1>
+                    <p class="text-justify font-weight-normal text-muted">
+                        La veille technologique, un élément essentiel de la veille stratégique, consiste à garder un œil sur les avancées techniques et les nouveautés dans un secteur spécifique. Cela implique de surveiller, collecter, partager et diffuser des informations qui peuvent aider à anticiper ou à comprendre les changements dans des domaines tels que la recherche, le développement, les brevets, le lancement de nouveaux produits, les matériaux, les procédés, les concepts ou les innovations en matière de fabrication. Le but est d'évaluer comment ces changements pourraient affecter l'environnement ou les opérations d'une organisation.
+                    </p>
+				</div>
+                <div class="container">
+					<h1 class="mb-5">
+						<span class="text-danger">Suivis d'informations</span>
+						de la veille technologique
+					</h1>
+                    <div class="row">
+						{% for item in rss_items %}
+							<div class="blog-card">
+								<div class="img-holder">
+									<img src="/assets/imgs/Symfony.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+								</div>
+								<div class="content-holder">
+									<h6 class="title">{{ item.title }}</h6>
+									<p class="post-details">
+										<a href="#">Le :
+											{{ item.pubDate }}
+										</a>
+									</p>
+                                    <p>{{ item.description|slice(0, 200) }}</p>
+									<a href="{{ item.link }}" class="read-more">Lire d'avantage
+										<i class="ti-angle-double-right"></i>
+									</a>
+								</div>
+							</div>
+							<!-- end of blog wrapper -->
+						{% endfor %}
+					</div>
+                    <div class="container">
+                        <h1 class="mb-5">
+                            <span class="text-danger">Conclusion</span>
+                            de ma veille
+                        </h1>
+                        <p class="text-justify font-weight-big text-muted">
+                            Symfony est réputé pour sa flexibilité et ses outils conçus pour faciliter le travail des développeurs. Selon moi, c'est l'un des meilleurs frameworks, car il évolue rapidement, ce qui le distingue de ses concurrents. Avec une cybersécurité de plus en plus menacée, le fait que Symfony soit régulièrement mis à jour aide à réduire le risque de failles dans les applications.
+                            <br><br>
+                            L'audit de sécurité via Composer (commande : composer audit) et les tests de sécurité, comme les outils d'automatisation et les CVE, permettent de repérer et de corriger les vulnérabilités dès le début du développement. De plus, la communauté open source active de Symfony est un atout majeur. Elle soutient le partage de solutions efficaces en matière de sécurité et stimule la collaboration entre les développeurs pour maintenir les applications à jour.
+                            <br><br>
+                            Il est crucial que les développeurs possèdent une culture de sécurité. Ce qui veut dire les former aux principes de sécurité et mettre en place des processus intégrant des contrôles de sécurité tout au long du développement du logiciel. En adoptant des méthodologies telles que DevSecOps, qui intègrent la sécurité dès le début du développement, il est possible de réduire ces risques.
+                            <br><br>
+                            Des projets open source comme OWASP (Open Web Application Security Project) offrent une grande quantité de ressources, y compris des guides sur les meilleures pratiques de sécurité et des outils pour renforcer la sécurité des applications. Finalement, pour éviter les nouvelles menaces, il est primordial que les développeurs suivent de près les tendances en matière de sécurité et qu'ils restent vigilants.
+                            <br><br>
+                            En récapitulant, cette veille met en avant l'importance d'une approche proactive en matière de sécurité des applications web. Même si Symfony propose des outils sécurisés, il y a encore des failles de sécurité qui peuvent résulter de mauvaises pratiques de développement. Il est donc crucial de maintenir des niveaux de sécurité élevés et de s'assurer que toutes les étapes du développement prennent en compte la sécurité des applications.
+                        </p>
+                    </div>
+				</div>
+			</section>
+			<div class="section contact bg-dark" id="contact">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8">
+							<div class="contact-form-card">
+								<h4 class="contact-title">Envoyer un message</h4>
+								<form action="">
+									<div class="form-group">
+										<input class="form-control" type="text" placeholder="Nom *" required>
+									</div>
+									<div class="form-group">
+										<input class="form-control" type="email" placeholder="Email *" required>
+									</div>
+									<div class="form-group">
+										<textarea class="form-control" id="" placeholder="Message *" rows="7" required></textarea>
+									</div>
+									<div class="form-group ">
+										<button type="submit" class="form-control btn btn-primary">Envoyer</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="contact-info-card">
+								<h4 class="contact-title">Me contacter</h4>
+								<div class="row mb-2">
+									<div class="col-1 pt-1 mr-1">
+										<i class="ti-mobile icon-md"></i>
+									</div>
+									<div class="col-10 ">
+										<h6 class="d-inline">Téléphone :
+											<br>
+											<span class="text-muted">06 38 34 48 93</span>
+										</h6>
+									</div>
+								</div>
+								<div class="row mb-2">
+									<div class="col-1 pt-1 mr-1">
+										<i class="ti-map-alt icon-md"></i>
+									</div>
+									<div class="col-10">
+										<h6 class="d-inline">Adresse :<br>
+											<span class="text-muted">15 rue du jardin des plantes, 50300, Avranches</span>
+										</h6>
+									</div>
+								</div>
+								<div class="row mb-2">
+									<div class="col-1 pt-1 mr-1">
+										<i class="ti-envelope icon-md"></i>
+									</div>
+									<div class="col-10">
+										<h6 class="d-inline">Email :<br>
+											<span class="text-muted">evan.moreau@etik.com</span>
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- core  -->
+			<script src="/assets/vendors/jquery/jquery-3.4.1.js"></script>
+			<script src="/addons/js/redirectToPage.js"></script>
+			<script src="/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+			<!-- bootstrap 3 affix -->
+			<script src="/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+			<!-- Isotope  -->
+			<script src="/assets/vendors/isotope/isotope.pkgd.js"></script>
+
+			<!-- JohnDoe js -->
+			<script src="/assets/js/johndoe.js"></script>
+
+		</body>
+	</html>
+
+{% endblock %}

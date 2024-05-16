@@ -111,13 +111,16 @@
 					<div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item">
-								<a href="#home" class="nav-link">Home</a>
+								<a href="#home" class="nav-link">Accueil</a>
 							</li>
 							<li class="nav-item">
-								<a href="#about" class="nav-link">About</a>
+								<a href="#about" class="nav-link">A propos</a>
 							</li>
 							<li class="nav-item">
-								<a href="#resume" class="nav-link">Resume</a>
+								<a href="#resume" class="nav-link">Résumé</a>
+							</li>
+							<li class="nav-item">
+								<a href="#formation" class="nav-link">Formation</a>
 							</li>
 						</ul>
 						<ul class="navbar-nav brand">
@@ -129,13 +132,16 @@
 						</ul>
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item">
-								<a href="#portfolio" class="nav-link">Portfolio</a>
+								<a href="#documentation" class="nav-link">Documentations</a>
 							</li>
 							<li class="nav-item">
-								<a href="#blog" class="nav-link">Blog</a>
+								<a href="#logiciel" class="nav-link">Logiciels</a>
+							</li>							
+							<li class="nav-item">
+								<a href="#rss" class="nav-link">RSS</a>
 							</li>
 							<li class="nav-item last-item">
-								<a href="#contact" class="nav-link">Contact</a>
+								<a href="#veille" class="nav-link">Veille</a>
 							</li>
 						</ul>
 					</div>
@@ -376,7 +382,7 @@
 				</div>
 			</section>
 
-			<section class="section" id="service">
+			<section class="section" id="formation">
         <div class="container">
             <h2 class="mb-5 pb-4"><span class="text-danger">Ma</span> Formation</h2>
             <div class="row">
@@ -480,7 +486,7 @@
         </div>
     </section>
 			<!-- Portfolio Section -->
-			<section class="section bg-custom-gray" id="portfolio">
+			<section class="section bg-custom-gray" id="documentation">
 				<div class="container">
 					<h1 class="mb-5">
 						<span class="text-danger">Mes</span>
@@ -519,7 +525,7 @@
 			<div
 				class="relative flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
 				<!-- Utilisation de la grille Bootstrap -->
-				<div class="container">
+				<div class="container" id="logiciel">
 					<h1 class="mb-5">
 						<span class="text-danger">Mes</span>
 						logiciels/outils
@@ -547,7 +553,7 @@
 
 			<!-- End of portfolio section -->
 
-			<section class="section" id="blog">
+			<section class="section" id="rss">
 				<div class="container">
 					<h2 class="mb-5">Flux
 						<span class="text-danger">RSS</span>
@@ -580,7 +586,43 @@
 					</div>
 				</div>
 			</section>
+			<section class="section bg-custom-gray text-black">
+				<div class="container" id="veille">
+					<div class="row text-center">
+						<h1 class="mb-5">
+							<span class="text-danger">Ma</span>
+							veille technologique
+						</h1>
+						
+					</div>
+					<div class="blog-card">
+								<div class="img-holder">
+									<img src="/assets/imgs/Symfony.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+								</div>
+								<div class="content-holder">
+									<h6 class="title">Pourquoi Symfony est le framework idéal pour le développement d'applications web ?</h6>
+									{% set datePlusRecente = null %}
 
+									{# Parcours de toutes les dates pour trouver la plus récente #}
+									{% for item in rss_items %}
+										{% if not datePlusRecente or item.pubDate > datePlusRecente %}
+											{% set datePlusRecente = item.pubDate %}
+										{% endif %}
+									{% endfor %}
+									<p class="post-details">
+										<a href="#">Dernière mise à jour le {{ rss_items[0].pubDate }}</a>
+										</a>
+									</p>
+
+									<p>Veille technologique</p>
+
+									<a href="/veille" class="read-more">Lire d'avantage
+										<i class="ti-angle-double-right"></i>
+									</a>
+								</div>
+							</div>
+				</div>
+			</section>
 			<div class="section contact bg-dark" id="contact">
 				<div class="container">
 					<div class="row">
@@ -589,7 +631,7 @@
 								<h4 class="contact-title">Envoyer un message</h4>
 								<form action="">
 									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Name *" required>
+										<input class="form-control" type="text" placeholder="Nom *" required>
 									</div>
 									<div class="form-group">
 										<input class="form-control" type="email" placeholder="Email *" required>
@@ -637,33 +679,6 @@
 										</h6>
 									</div>
 								</div>
-								<ul class="social-icons pt-4">
-									<li class="social-item">
-										<a class="social-link text-dark" href="#">
-											<i class="ti-facebook" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li class="social-item">
-										<a class="social-link text-dark" href="#">
-											<i class="ti-twitter" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li class="social-item">
-										<a class="social-link text-dark" href="#">
-											<i class="ti-google" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li class="social-item">
-										<a class="social-link text-dark" href="#">
-											<i class="ti-instagram" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li class="social-item">
-										<a class="social-link text-dark" href="#">
-											<i class="ti-github" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
 							</div>
 						</div>
 					</div>
