@@ -18,6 +18,8 @@ class DocumentCategoryController extends AbstractController
     #[Route('/', name: 'app_document_category_index', methods: ['GET'])]
     public function index(DocumentCategoryRepository $documentCategoryRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+
         return $this->render('document_category/index.html.twig', [
             'document_categories' => $documentCategoryRepository->findAll(),
         ]);
@@ -26,6 +28,8 @@ class DocumentCategoryController extends AbstractController
     #[Route('/new', name: 'app_document_category_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, DocumentCategoryRepository $documentCategoryRepository, ImageUploaderHelper $imageUploaderHelper): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+
         $documentCategory = new DocumentCategory();
         $form = $this->createForm(DocumentCategoryType::class, $documentCategory);
         $form->handleRequest($request);
@@ -65,6 +69,8 @@ class DocumentCategoryController extends AbstractController
     #[Route('/{id}', name: 'app_document_category_show', methods: ['GET'])]
     public function show(DocumentCategory $documentCategory): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+
         return $this->render('document_category/show.html.twig', [
             'document_category' => $documentCategory,
         ]);
@@ -73,6 +79,8 @@ class DocumentCategoryController extends AbstractController
     #[Route('/{id}/edit', name: 'app_document_category_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, DocumentCategory $documentCategory, EntityManagerInterface $entityManager): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+        
         $form = $this->createForm(DocumentCategoryType::class, $documentCategory);
         $form->handleRequest($request);
 
@@ -91,6 +99,8 @@ class DocumentCategoryController extends AbstractController
     #[Route('/{id}', name: 'app_document_category_delete', methods: ['POST'])]
     public function delete(Request $request, DocumentCategory $documentCategory, EntityManagerInterface $entityManager): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+        
         if ($this->isCsrfTokenValid('delete'.$documentCategory->getId(), $request->request->get('_token'))) {
             $entityManager->remove($documentCategory);
             $entityManager->flush();

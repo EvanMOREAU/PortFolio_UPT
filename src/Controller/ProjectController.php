@@ -17,6 +17,8 @@ class ProjectController extends AbstractController
     #[Route('/', name: 'app_project_index', methods: ['GET'])]
     public function index(ProjectRepository $projectRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+        
         return $this->render('project/index.html.twig', [
             'projects' => $projectRepository->findAll(),
         ]);
@@ -25,6 +27,8 @@ class ProjectController extends AbstractController
     #[Route('/new', name: 'app_project_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+        
         $project = new Project();
         $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
@@ -45,6 +49,8 @@ class ProjectController extends AbstractController
     #[Route('/{id}', name: 'app_project_show', methods: ['GET'])]
     public function show(Project $project): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+        
         return $this->render('project/show.html.twig', [
             'project' => $project,
         ]);
@@ -53,6 +59,8 @@ class ProjectController extends AbstractController
     #[Route('/{id}/edit', name: 'app_project_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Project $project, EntityManagerInterface $entityManager): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+        
         $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
 
@@ -71,6 +79,8 @@ class ProjectController extends AbstractController
     #[Route('/{id}', name: 'app_project_delete', methods: ['POST'])]
     public function delete(Request $request, Project $project, EntityManagerInterface $entityManager): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+        
         if ($this->isCsrfTokenValid('delete'.$project->getId(), $request->request->get('_token'))) {
             $entityManager->remove($project);
             $entityManager->flush();

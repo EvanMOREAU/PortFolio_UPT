@@ -19,6 +19,8 @@ class DocumentationsController extends AbstractController
     #[Route('/', name: 'app_documentations_index', methods: ['GET'])]
     public function index(DocumentCategoryRepository $documentCategoryRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+
         return $this->render('documentations/index.html.twig', [
             'document_categories' => $documentCategoryRepository->findAll(),
 
@@ -28,6 +30,10 @@ class DocumentationsController extends AbstractController
     #[Route('/new', name: 'app_documentations_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, PdfUploader $pdfUploader ): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+
         $documentation = new Documentations();
         $form = $this->createForm(DocumentationsType::class, $documentation);
         $form->handleRequest($request);
@@ -63,6 +69,8 @@ class DocumentationsController extends AbstractController
     #[Route('/doc/{id}', name: 'app_documentation_show')]
     public function show($id, DocumentationsRepository $documentationsRepository, DocumentCategoryRepository $documentCategoryRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+
         $category = $documentCategoryRepository->find($id); // Remplacez par le moyen de récupérer votre catégorie
     
         if (!$category) {
@@ -80,6 +88,8 @@ class DocumentationsController extends AbstractController
     #[Route('/{id}/edit', name: 'app_documentations_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Documentations $documentation, EntityManagerInterface $entityManager): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+
         $form = $this->createForm(DocumentationsType::class, $documentation);
         $form->handleRequest($request);
 
@@ -98,6 +108,8 @@ class DocumentationsController extends AbstractController
     #[Route('/{id}', name: 'app_documentations_delete', methods: ['POST'])]
     public function delete(Request $request, Documentations $documentation, EntityManagerInterface $entityManager): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+        
         if ($this->isCsrfTokenValid('delete'.$documentation->getId(), $request->request->get('_token'))) {
             $entityManager->remove($documentation);
             $entityManager->flush();

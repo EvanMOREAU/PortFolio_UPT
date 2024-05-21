@@ -11,6 +11,8 @@ class SIOController extends AbstractController
     #[Route('/sio', name: 'app_sio')]
     public function index(): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+        
         return $this->render('sio/index.html.twig', [
             'controller_name' => 'SIOController',
         ]);

@@ -17,6 +17,8 @@ class StudiesController extends AbstractController
     #[Route('/', name: 'app_studies_index', methods: ['GET'])]
     public function index(StudiesRepository $studiesRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
+        
         return $this->render('studies/index.html.twig', [
             'studies' => $studiesRepository->findAll(),
         ]);
@@ -26,7 +28,7 @@ class StudiesController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
-
+        
         $study = new Studies();
         $form = $this->createForm(StudiesType::class, $study);
         $form->handleRequest($request);
@@ -48,7 +50,7 @@ class StudiesController extends AbstractController
     public function edit(Request $request, Studies $study, EntityManagerInterface $entityManager): Response
     {
         $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
-
+        
         $form = $this->createForm(StudiesType::class, $study);
         $form->handleRequest($request);
 
@@ -68,7 +70,7 @@ class StudiesController extends AbstractController
     public function delete(Request $request, Studies $study, EntityManagerInterface $entityManager): Response
     {
         $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
-        
+
         if ($this->isCsrfTokenValid('delete'.$study->getId(), $request->request->get('_token'))) {
             $entityManager->remove($study);
             $entityManager->flush();
