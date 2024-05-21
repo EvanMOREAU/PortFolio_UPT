@@ -57,7 +57,7 @@ class DocumentationsController extends AbstractController
             $entityManager->persist($documentation);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_documentations_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_documentations_new', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('documentations/new.html.twig', [
@@ -109,7 +109,7 @@ class DocumentationsController extends AbstractController
     public function delete(Request $request, Documentations $documentation, EntityManagerInterface $entityManager): Response
     {
         $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
-        
+
         if ($this->isCsrfTokenValid('delete'.$documentation->getId(), $request->request->get('_token'))) {
             $entityManager->remove($documentation);
             $entityManager->flush();
