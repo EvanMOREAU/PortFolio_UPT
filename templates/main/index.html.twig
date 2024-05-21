@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!
+{% block title %}Portfolio Evan Moreau
 {% endblock %}
 
 {% block body %}
@@ -98,10 +98,11 @@
 						<h4 class="header-subtitle">Bonjour, je suis</h4>
 						<h1 class="header-title">Evan Moreau</h1>
 						<h6 class="header-mono">Étudiant | BTS SIO</h6>
-						<button class="btn btn-primary btn-rounded">
-							<i class="ti-printer pr-2"></i>PDF Résumé</button>
+						<a class="btn btn-primary btn-rounded" href="{{ asset('/document/CV_Evan_Moreau.pdf') }}" target="_blank">
+							<i class="ti-printer pr-2"></i>PDF Résumé</a>
 					</div>
 				</div>
+
 			</header>
 			<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
 				<div class="container">
@@ -154,8 +155,8 @@
 						<span class="line mb-5"></span>
 						<h5 class="mb-3">Étidiant en BTS SIO (Service Informatique aux Organisations) 2ème année</h5>
 						<p class="mt-20">Je suis actuellement en option SLAM (Solution Logicielle et Application Métier)</p>
-						<button class="btn btn-outline-danger">
-							<i class="icon-down-circled2 "></i>Télécharger mon CV</button>
+						<a class="btn btn-outline-danger" href="{{ asset('/document/CV_Evan_Moreau.pdf') }}" target="_blank">
+							<i class="icon-down-circled2 "></i>Télécharger mon CV</a>
 					</div>
 					<div class="col-lg-4 about-card">
 						<h3 class="font-weight-light">Informations personnelles</h3>
@@ -273,7 +274,7 @@
 										<P>{{ project.name }}</P>
 										<P class="subtitle">
 											{% if project.link !="" %}
-												<a href="{{ project.link }}" target="_blank">Lien ici</a><br>
+												<a href="https://{{ project.link }}" target="_blank">Lien ici</a><br>
 											{% endif %}
 											{{ project.description }}</P>
 										{% if not loop.last %}

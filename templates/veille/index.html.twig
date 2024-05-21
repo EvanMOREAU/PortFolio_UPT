@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!
-{% endblock %}
+ 
 
 {% block body %}
 	<html lang="en">
@@ -112,16 +111,13 @@
 					<div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item">
-								<a href="#home" class="nav-link">Accueil</a>
+								<a href="/" class="nav-link">Accueil</a>
 							</li>
 							<li class="nav-item">
-								<a href="#about" class="nav-link">A propos</a>
+								<a href="#def" class="nav-link">Définition</a>
 							</li>
 							<li class="nav-item">
-								<a href="#resume" class="nav-link">Résumé</a>
-							</li>
-							<li class="nav-item">
-								<a href="#formation" class="nav-link">Formation</a>
+								<a href="#sujet" class="nav-link">Sujet</a>
 							</li>
 						</ul>
 						<ul class="navbar-nav brand">
@@ -133,16 +129,13 @@
 						</ul>
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item">
-								<a href="#documentation" class="nav-link">Documentations</a>
+								<a href="#desc" class="nav-link">Description</a>
 							</li>
 							<li class="nav-item">
-								<a href="#logiciel" class="nav-link">Logiciels</a>
+								<a href="#suivis" class="nav-link">Suivis</a>
 							</li>							
 							<li class="nav-item">
-								<a href="#rss" class="nav-link">RSS</a>
-							</li>
-							<li class="nav-item last-item">
-								<a href="#veille" class="nav-link">Veille</a>
+								<a href="#conclusion" class="nav-link">Conclusion</a>
 							</li>
 						</ul>
 					</div>
@@ -150,7 +143,7 @@
 			</nav>
 			<!-- Portfolio Section -->
 			<section class="section bg-custom-gray" id="documentation">
-				<div class="container">
+				<div class="container" id="def">
 					<h1 class="mb-5">
 						<span class="text-danger">Définition</span>
 						de "Veille technologique"
@@ -159,7 +152,7 @@
                         La veille technologique, un élément essentiel de la veille stratégique, consiste à garder un œil sur les avancées techniques et les nouveautés dans un secteur spécifique. Cela implique de surveiller, collecter, partager et diffuser des informations qui peuvent aider à anticiper ou à comprendre les changements dans des domaines tels que la recherche, le développement, les brevets, le lancement de nouveaux produits, les matériaux, les procédés, les concepts ou les innovations en matière de fabrication. Le but est d'évaluer comment ces changements pourraient affecter l'environnement ou les opérations d'une organisation.
                     </p>
 				</div>
-                <div class="container">
+                <div class="container" id="sujet">
 					<h1 class="mb-5">
 						<span class="text-danger">Sujet</span>
 						de la veille technologique
@@ -168,7 +161,7 @@
 						Pourquoi Symfony est le framework idéal pour le développement d'applications web ?
 					</h4>
 				</div>
-                <div class="container">
+                <div class="container" id="desc">
 					<h1 class="mb-5">
 						<span class="text-danger">Description</span>
 						de ma veille
@@ -177,7 +170,7 @@
                         La veille technologique, un élément essentiel de la veille stratégique, consiste à garder un œil sur les avancées techniques et les nouveautés dans un secteur spécifique. Cela implique de surveiller, collecter, partager et diffuser des informations qui peuvent aider à anticiper ou à comprendre les changements dans des domaines tels que la recherche, le développement, les brevets, le lancement de nouveaux produits, les matériaux, les procédés, les concepts ou les innovations en matière de fabrication. Le but est d'évaluer comment ces changements pourraient affecter l'environnement ou les opérations d'une organisation.
                     </p>
 				</div>
-                <div class="container">
+                <div class="container" id="suivis">
 					<h1 class="mb-5">
 						<span class="text-danger">Suivis d'informations</span>
 						de la veille technologique
@@ -204,7 +197,7 @@
 							<!-- end of blog wrapper -->
 						{% endfor %}
 					</div>
-                    <div class="container">
+                    <div class="container" id="conclusion">
                         <h1 class="mb-5">
                             <span class="text-danger">Conclusion</span>
                             de ma veille
