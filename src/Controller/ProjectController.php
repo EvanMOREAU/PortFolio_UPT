@@ -17,11 +17,15 @@ class ProjectController extends AbstractController
     #[Route('/', name: 'app_project_index', methods: ['GET'])]
     public function index(ProjectRepository $projectRepository): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
-        
-        return $this->render('project/index.html.twig', [
-            'projects' => $projectRepository->findAll(),
-        ]);
+        if($this->isGranted('ROLE_SUPER_ADMIN')){
+            return $this->render('project/index.html.twig', [
+                'projects' => $projectRepository->findAll(),
+            ]);
+        }else{
+            return $this->render('project/index_user.html.twig', [
+                'projects' => $projectRepository->findAll(),
+            ]);
+        }
     }
 
     #[Route('/new', name: 'app_project_new', methods: ['GET', 'POST'])]

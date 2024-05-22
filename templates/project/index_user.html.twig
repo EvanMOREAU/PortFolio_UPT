@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
 	<html lang="en">
 		<head>
@@ -94,9 +93,11 @@
 					</ul>
 					<div class="header-content">
 						<h4 class="header-subtitle">Evan Moreau</h4>
-						<h1 class="header-title">Veille</h1>
-                        <h1 class="header-title">Technologique</h1>
+						<h1 class="header-title">Mes</h1>
+                        <h1 class="header-title">Projets</h1>
 						<h6 class="header-mono">Étudiant | BTS SIO</h6>
+						<a class="btn btn-primary btn-rounded" href="/info-legales" target="_blank">
+							<i class="ti-printer pr-2"></i>Informations légales</a>						
 					</div>
 				</div>
 			</header>
@@ -110,12 +111,6 @@
 							<li class="nav-item">
 								<a href="/" class="nav-link">Accueil</a>
 							</li>
-							<li class="nav-item">
-								<a href="#def" class="nav-link">Définition</a>
-							</li>
-							<li class="nav-item">
-								<a href="#sujet" class="nav-link">Sujet</a>
-							</li>
 						</ul>
 						<ul class="navbar-nav brand">
 							<img src="/images/pic01.jpg" alt="" class="brand-img">
@@ -124,93 +119,42 @@
 								<div class="brand-subtitle">Étudiant</div>
 							</li>
 						</ul>
-						<ul class="navbar-nav ml-auto">
-							<li class="nav-item">
-								<a href="#desc" class="nav-link">Description</a>
-							</li>
-							<li class="nav-item">
-								<a href="#suivis" class="nav-link">Suivis</a>
-							</li>							
-							<li class="nav-item">
-								<a href="#conclusion" class="nav-link">Conclusion</a>
-							</li>
+						<ul class="navbar-nav ml-auto">					
 						</ul>
 					</div>
 				</div>
 			</nav>
 			<!-- Portfolio Section -->
 			<section class="section bg-custom-gray" id="documentation">
-				<div class="container" id="def">
-					<h1 class="mb-5">
-						<span class="text-danger">Définition</span>
-						de "Veille technologique"
-					</h1>
-                    <p class="text-justify font-weight-normal text-muted">
-                        La veille technologique, un élément essentiel de la veille stratégique, consiste à garder un œil sur les avancées techniques et les nouveautés dans un secteur spécifique. Cela implique de surveiller, collecter, partager et diffuser des informations qui peuvent aider à anticiper ou à comprendre les changements dans des domaines tels que la recherche, le développement, les brevets, le lancement de nouveaux produits, les matériaux, les procédés, les concepts ou les innovations en matière de fabrication. Le but est d'évaluer comment ces changements pourraient affecter l'environnement ou les opérations d'une organisation.
-                    </p>
-				</div>
-                <div class="container" id="sujet">
-					<h1 class="mb-5">
-						<span class="text-danger">Sujet</span>
-						de la veille technologique
-					</h1>
-                    <h4 class="mb-5">
-						Pourquoi Symfony est le framework idéal pour le développement d'applications web ?
-					</h4>
-				</div>
-                <div class="container" id="desc">
-					<h1 class="mb-5">
-						<span class="text-danger">Description</span>
-						de ma veille
-					</h1>
-                    <p class="text-justify font-weight-normal text-muted">
-                        La veille technologique, un élément essentiel de la veille stratégique, consiste à garder un œil sur les avancées techniques et les nouveautés dans un secteur spécifique. Cela implique de surveiller, collecter, partager et diffuser des informations qui peuvent aider à anticiper ou à comprendre les changements dans des domaines tels que la recherche, le développement, les brevets, le lancement de nouveaux produits, les matériaux, les procédés, les concepts ou les innovations en matière de fabrication. Le but est d'évaluer comment ces changements pourraient affecter l'environnement ou les opérations d'une organisation.
-                    </p>
-				</div>
                 <div class="container" id="suivis">
 					<h1 class="mb-5">
-						<span class="text-danger">Suivis d'informations</span>
-						de la veille technologique
+						<span class="text-danger">Ensemble</span>
+						de mes projets
 					</h1>
                     <div class="row">
-						{% for item in rss_items %}
+						{% for project in projects %}
 							<div class="blog-card">
 								<div class="img-holder">
 									<img src="/assets/imgs/Symfony.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
 								</div>
 								<div class="content-holder">
-									<h6 class="title">{{ item.title }}</h6>
+									<h6 class="title">{{ project.name }}</h6>
 									<p class="post-details">
-										<a href="#">Le :
-											{{ item.pubDate }}
+										<a href="#">
+											{{ project.year|date('Y') }}
 										</a>
 									</p>
-                                    <p>{{ item.description|slice(0, 200) }}</p>
-									<a href="{{ item.link }}" class="read-more">Lire d'avantage
-										<i class="ti-angle-double-right"></i>
-									</a>
+                                    <p>{{ project.description }}</p>
+                                    {% if project.link != "" %}
+                                        <a href="{{ project.link }}" class="read-more">Voir l'application
+                                            <i class="ti-angle-double-right"></i>
+                                        </a>
+                                    {% endif %}
 								</div>
 							</div>
 							<!-- end of blog wrapper -->
 						{% endfor %}
 					</div>
-                    <div class="container" id="conclusion">
-                        <h1 class="mb-5">
-                            <span class="text-danger">Conclusion</span>
-                            de ma veille
-                        </h1>
-                        <p class="text-justify font-weight-big text-muted">
-                            Symfony est réputé pour sa flexibilité et ses outils conçus pour faciliter le travail des développeurs. Selon moi, c'est l'un des meilleurs frameworks, car il évolue rapidement, ce qui le distingue de ses concurrents. Avec une cybersécurité de plus en plus menacée, le fait que Symfony soit régulièrement mis à jour aide à réduire le risque de failles dans les applications.
-                            <br><br>
-                            L'audit de sécurité via Composer (commande : composer audit) et les tests de sécurité, comme les outils d'automatisation et les CVE, permettent de repérer et de corriger les vulnérabilités dès le début du développement. De plus, la communauté open source active de Symfony est un atout majeur. Elle soutient le partage de solutions efficaces en matière de sécurité et stimule la collaboration entre les développeurs pour maintenir les applications à jour.
-                            <br><br>
-                            Il est crucial que les développeurs possèdent une culture de sécurité. Ce qui veut dire les former aux principes de sécurité et mettre en place des processus intégrant des contrôles de sécurité tout au long du développement du logiciel. En adoptant des méthodologies telles que DevSecOps, qui intègrent la sécurité dès le début du développement, il est possible de réduire ces risques.
-                            <br><br>
-                            Des projets open source comme OWASP (Open Web Application Security Project) offrent une grande quantité de ressources, y compris des guides sur les meilleures pratiques de sécurité et des outils pour renforcer la sécurité des applications. Finalement, pour éviter les nouvelles menaces, il est primordial que les développeurs suivent de près les tendances en matière de sécurité et qu'ils restent vigilants.
-                            <br><br>
-                            En récapitulant, cette veille met en avant l'importance d'une approche proactive en matière de sécurité des applications web. Même si Symfony propose des outils sécurisés, il y a encore des failles de sécurité qui peuvent résulter de mauvaises pratiques de développement. Il est donc crucial de maintenir des niveaux de sécurité élevés et de s'assurer que toutes les étapes du développement prennent en compte la sécurité des applications.
-                        </p>
-                    </div>
 				</div>
 			</section>
 			<div class="section contact bg-dark" id="contact">

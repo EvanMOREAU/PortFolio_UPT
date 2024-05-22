@@ -98,8 +98,10 @@
 						<h4 class="header-subtitle">Bonjour, je suis</h4>
 						<h1 class="header-title">Evan Moreau</h1>
 						<h6 class="header-mono">Étudiant | BTS SIO</h6>
-						<a class="btn btn-primary btn-rounded" href="{{ asset('/document/CV_Evan_Moreau.pdf') }}" target="_blank">
-							<i class="ti-printer pr-2"></i>PDF Résumé</a>
+						<a class="btn btn-primary btn-rounded" href="/project" target="_blank">
+							<i class="ti-printer pr-2"></i>Mes projets</a>
+						<a class="btn btn-primary btn-rounded" href="/info-legales" target="_blank">
+							<i class="ti-printer pr-2"></i>Informations légales</a>
 					</div>
 				</div>
 
@@ -264,7 +266,7 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="mt-2">
-										<h4>Projets</h4>
+										<h4><a href="/project">Projets</a></h4>
 										<span class="line"></span>
 									</div>
 								</div>
@@ -375,7 +377,7 @@
 								<div class="col-7 text-left py-3">
 									<h1 class="text-danger font-weight-bold font40">
 										+∞</h1>
-									<p class="text-light mb-1">Cafés bu</p>
+									<p class="text-light mb-1">Cafés bus</p>
 								</div>
 							</div>
 						</div>
@@ -630,7 +632,7 @@
 						<div class="col-lg-8">
 							<div class="contact-form-card">
 								<h4 class="contact-title">Envoyer un message</h4>
-								<form action="">
+								<form action="{{ path('app_contact') }}">
 									<div class="form-group">
 										<input class="form-control" type="text" placeholder="Nom *" required>
 									</div>

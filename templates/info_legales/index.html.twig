@@ -1,0 +1,244 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			<meta name="description" content="PortFolio d'Evan MOREAU">
+			<meta name="author" content="Evan MOREAU">
+			<title>Evan Moreau</title>
+			<!-- font icons -->
+			<link
+			rel="stylesheet" href="/assets/vendors/themify-icons/css/themify-icons.css">
+			<!-- Bootstrap + JohnDoe main styles -->
+			<link rel="stylesheet" href="/assets/css/johndoe.css">
+			<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+			<style>
+				.card {
+					background: white;
+					padding: 0.4em;
+					border-radius: 6px;
+				}
+
+                .card-image {
+                width: 50%;  /* Vous pouvez ajuster cela selon vos besoins */
+                height: 130px;
+                border-radius: 6px 6px 0 0;
+                display: block;  /* Pour garantir que l'image est un élément de bloc */
+                margin: 0 auto;  /* Centre l'image horizontalement */
+                transition: transform 0.2s ease;  /* Transition pour l'effet de survol */
+                }
+
+                .card-image:hover {
+                transform: scale(0.98);  /* L'effet de réduction lors du survol */
+                }
+
+				.category {
+					text-transform: uppercase;
+					font-size: 0.7em;
+					font-weight: 600;
+					color: rgb(63, 121, 230);
+					padding: 10px 7px 0;
+				}
+
+				.category:hover {
+					cursor: pointer;
+				}
+
+				.heading {
+					font-weight: 600;
+					color: rgb(88, 87, 87);
+					padding: 7px;
+				}
+
+				.heading:hover {
+					cursor: pointer;
+				}
+
+				.author {
+					color: gray;
+					font-weight: 400;
+					font-size: 11px;
+					padding-top: 20px;
+				}
+
+				.name {
+					font-weight: 600;
+				}
+
+				.name:hover {
+					cursor: pointer;
+				}
+			</style>
+		</head>
+		<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+			<a href="components.html" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600">
+				<i class="ti-shift-left-alt"></i>
+				Components</a>
+			<header class="header">
+				<div class="container">
+					<ul class="social-icons pt-3">
+						<li class="social-item">
+							<a class="social-link text-light" href="https://www.linkedin.com/in/evan-moreau-933336271/" target="_blank">
+								<i class="ti-linkedin" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li class="social-item">
+							<a class="social-link text-light" href="https://github.com/EvanMOREAU" target="_blank">
+								<i class="ti-github" aria-hidden="true"></i>
+							</a>
+						</li>
+					</ul>
+					<div class="header-content">
+						<h4 class="header-subtitle">Evan Moreau</h4>
+						<h1 class="header-title">Informations</h1>
+                        <h1 class="header-title">Légales</h1>
+						<h6 class="header-mono">Étudiant | BTS SIO</h6>
+						<a class="btn btn-primary btn-rounded" href="/project" target="_blank">
+							<i class="ti-printer pr-2"></i>Mes projets</a>                    
+					</div>
+				</div>
+			</header>
+			<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+				<div class="container">
+					<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item">
+								<a href="/" class="nav-link">Accueil</a>
+							</li>
+						</ul>
+						<ul class="navbar-nav brand">
+							<img src="/images/pic01.jpg" alt="" class="brand-img">
+							<li class="brand-txt">
+								<h5 class="brand-title">Evan Moreau</h5>
+								<div class="brand-subtitle">Étudiant</div>
+							</li>
+						</ul>
+						<ul class="navbar-nav ml-auto">
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- Portfolio Section -->
+			<section class="section bg-custom-gray" id="documentation">
+                   <div class="container">
+                        <h1 class="mb-5">
+                            <span class="text-danger">Informations</span>
+                            Générales
+                        </h1>
+                        <p class="text-justify font-weight-normal text-muted">
+                            Éditeur du site :
+                            <br>Nom : Evan MOREAU
+                            <br>Adresse : 15 rue du jardin des plantes
+                            <br>Email : evan.moreau@etik.com
+                            <br>Téléphone : 06 38 34 48 93
+                        </p>
+                    </div>
+
+                    <div class="container">
+                        <h1 class="mb-5">
+                            <span class="text-danger">Directeur</span>
+                            de la publication
+                        </h1>
+                        <p class="text-justify font-weight-normal text-muted">
+                            Nom : Evan MOREAU
+                            <br>Email : evan.moreau@etik.com
+                        </p>
+                    </div>
+
+                    <div class="container">
+                        <h1 class="mb-5">
+                            <span class="text-danger">Hébergement</span>
+                            du site
+                        </h1>
+                        <p class="text-justify font-weight-normal text-muted">
+                            Nom de l’hébergeur : OVH
+                            <br>Adresse de l’hébergeur : RTE DE LA FERME MASSON ZI LES HUTTES 59820 GRAVELINES
+                            <br>Téléphone : 1007
+                        </p>
+                    </div>
+
+                    <div class="container">
+                        <h1 class="mb-5">
+                            <span class="text-danger">Propriété</span>
+                            Intellectuelle
+                        </h1>
+                        <p class="text-justify font-weight-normal text-muted">
+                            L'ensemble des contenus (textes, images, vidéos, etc.) présents sur ce site sont la propriété exclusive de Evan MOREAU, sauf mention contraire. Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord écrit de Evan MOREAU. Cette représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.
+                        </p>
+                    </div>
+
+                    <div class="container">
+                        <h1 class="mb-5">
+                            <span class="text-danger">Protection</span>
+                            des Données Personnelles
+                        </h1>
+                        <p class="text-justify font-weight-normal text-muted">
+                            En conformité avec les dispositions de la loi n°78-17 du 6 janvier 1978 modifiée, dite loi "Informatique et Libertés", et du Règlement Général sur la Protection des Données (RGPD) n°2016/679 du 27 avril 2016, vous disposez d'un droit d'accès, de rectification, de suppression, et d'opposition aux données personnelles vous concernant. Vous pouvez exercer ce droit en nous contactant à l'adresse suivante : evan.moreau@etik.com.
+                        </p>
+                    </div>
+
+                    <div class="container">
+                        <h1 class="mb-5">
+                            <span class="text-danger">Cookies</span>
+                        </h1>
+                        <p class="text-justify font-weight-normal text-muted">
+                            Le site PortFolio Evan MOREAU n'utilise aucun cookies.
+                        </p>
+                    </div>
+
+                    <div class="container">
+                        <h1 class="mb-5">
+                            <span class="text-danger">Limitation</span>
+                            de Responsabilité
+                        </h1>
+                        <p class="text-justify font-weight-normal text-muted">
+                            Evan MOREAU ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l'utilisateur, lors de l'accès au site PortFolio Evan MOREAU, et résultant soit de l'utilisation d'un matériel ne répondant pas aux spécifications indiquées au point 4, soit de l'apparition d'un bug ou d'une incompatibilité.
+                            <br>Evan MOREAU ne pourra également être tenu pour responsable des dommages indirects consécutifs à l'utilisation du site PortFolio Evan MOREAU.
+                        </p>
+                    </div>
+
+                    <div class="container">
+                        <h1 class="mb-5">
+                            <span class="text-danger">Droit</span>
+                            Applicable et Attribution de Juridiction
+                        </h1>
+                        <p class="text-justify font-weight-normal text-muted">
+                            Tout litige en relation avec l'utilisation du site PortFolio Evan MOREAU est soumis au droit français. Il est fait attribution exclusive de juridiction aux tribunaux compétents d'Avranches.
+                        </p>
+                    </div>
+
+                <div class="container">
+                    <h1 class="mb-5">
+                        <span class="text-danger">Contact</span>
+                    </h1>
+                    <p class="text-justify font-weight-normal text-muted">
+                        Pour toute question ou information sur les produits présentés sur le site, ou concernant le site lui-même, vous pouvez laisser un message à l'adresse suivante : evan.moreau@etik.com.
+                    </p>
+                </div>
+			</section>
+
+			<!-- core  -->
+			<script src="/assets/vendors/jquery/jquery-3.4.1.js"></script>
+			<script src="/addons/js/redirectToPage.js"></script>
+			<script src="/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+			<!-- bootstrap 3 affix -->
+			<script src="/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+			<!-- Isotope  -->
+			<script src="/assets/vendors/isotope/isotope.pkgd.js"></script>
+
+			<!-- JohnDoe js -->
+			<script src="/assets/js/johndoe.js"></script>
+
+		</body>
+	</html>
+
+{% endblock %}

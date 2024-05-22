@@ -47,7 +47,6 @@ class MainController extends AbstractController
                 }
             }
         }
-        dump($rss_items);
         //http://feeds.feedburner.com/symfony/blog
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
