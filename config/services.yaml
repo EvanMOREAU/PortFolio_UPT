@@ -20,11 +20,12 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
-    App\Services\ImageUploaderHelper:
+    App\Service\ImageUploaderHelper:
         arguments:
             $slugger: '@Symfony\Component\String\Slugger\SluggerInterface'
             $params: '@parameter_bag'
-    App\Services\PdfUploader:
+    App\Service\PdfUploader:
+    App\Service\FileUploaderHelper:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
