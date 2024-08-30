@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Logiciel;
 use App\Form\LogicielType;
-use App\Services\ImageUploaderHelper;
+use App\Service\ImageUploaderHelper;
 use App\Repository\LogicielRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;

@@ -2,48 +2,46 @@
 
 namespace App\Controller;
 
-use Symfony\Component\Mime\Email;
+use App\Entity\Contact;
+use App\Form\Contact2Type;
+use App\Repository\ContactRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class ContactController extends AbstractController
+#[Route('/contact')]
+final class ContactController extends AbstractController
 {
-    #[Route('/contact', name: 'app_contact', methods: ['GET', 'POST'])]
-    public function index(Request $request, MailerInterface $mailer): Response
+    #[Route(name: 'app_contact_index', methods: ['GET'])]
+    public function index(ContactRepository $contactRepository): Response
     {
-        if ($request->isMethod('POST')) {
-            $name = $request->request->get('name');
-            $email = $request->request->get('email');
-            $message = $request->request->get('message');
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
 
-            // Validation basique
-            if (!empty($name) && !empty($email) && !empty($message)) {
-                // Crée l'email
-                $email = (new Email())
-                    ->from($email)
-                    ->to('evan.moreau@etik.com') // Remplacez par votre adresse email
-                    ->subject('Nouveau message de contact du PORTFOLIO')
-                    ->text(
-                        "Nom: " . $name . "\n" .
-                        "Email: " . $email . "\n\n" .
-                        "Message:\n" . $message
-                    );
+        return $this->render('contact/index.html.twig', [
+            'contacts' => $contactRepository->findAll(),
+        ]);
+    }
 
-                // Envoie l'email
-                $mailer->send($email);
+    #[Route('/{id}', name: 'app_contact_show', methods: ['GET'])]
+    public function show(Contact $contact): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_SUPER_ADMIN');
 
-                // Affiche un message de succès
-                $this->addFlash('success', 'Votre message a été envoyé avec succès !');
+        return $this->render('contact/show.html.twig', [
+            'contact' => $contact,
+        ]);
+    }
 
-                return $this->redirectToRoute('contact');
-            } else {
-                $this->addFlash('error', 'Tous les champs sont obligatoires.');
-            }
+    #[Route('/{id}', name: 'app_contact_delete', methods: ['POST'])]
+    public function delete(Request $request, Contact $contact, EntityManagerInterface $entityManager): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$contact->getId(), $request->getPayload()->getString('_token'))) {
+            $entityManager->remove($contact);
+            $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_main');
+        return $this->redirectToRoute('app_contact_index', [], Response::HTTP_SEE_OTHER);
     }
 }

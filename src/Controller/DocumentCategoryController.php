@@ -4,7 +4,7 @@ namespace App\Controller;
 use Imagick;
 use App\Entity\DocumentCategory;
 use App\Form\DocumentCategoryType;
-use App\Services\ImageUploaderHelper;
+use App\Service\ImageUploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\DocumentCategoryRepository;
