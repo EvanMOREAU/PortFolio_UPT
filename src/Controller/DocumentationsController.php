@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Services\PdfUploader;
+use App\Service\PdfUploader;
 use App\Entity\Documentations;
 use App\Form\DocumentationsType;
 use Doctrine\ORM\EntityManagerInterface;
