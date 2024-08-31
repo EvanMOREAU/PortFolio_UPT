@@ -52,7 +52,6 @@ class MainController extends AbstractController
                 }
             }
         }
-        dump($rss_items);
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
