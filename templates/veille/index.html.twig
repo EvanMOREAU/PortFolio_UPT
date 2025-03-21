@@ -219,20 +219,26 @@
 						<div class="col-lg-8">
 							<div class="contact-form-card">
 								<h4 class="contact-title">Envoyer un message</h4>
-								<form action="{{ path('app_contact') }}">
-									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Nom *" required>
-									</div>
-									<div class="form-group">
-										<input class="form-control" type="email" placeholder="Email *" required>
-									</div>
-									<div class="form-group">
-										<textarea class="form-control" id="" placeholder="Message *" rows="7" required></textarea>
-									</div>
-									<div class="form-group ">
-										<button type="submit" class="form-control btn btn-primary">Envoyer</button>
-									</div>
-								</form>
+								{{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
+								    {{ form_row(form._token) }}
+									<form>
+										<div class="form-group">
+										    {{ form_row(form.name, { 'attr': { 'autocomplete': 'off', 'class': 'form-control', 'placeholder': 'Nom*', 'type': 'text', 'label': 'false' } }) }}
+											{# <input class="form-control" type="text" placeholder="Nom *" required> #}
+										</div>
+										<div class="form-group">
+											{{ form_row(form.email, { 'attr': { 'autocomplete': 'off', 'class': 'form-control', 'placeholder': 'Email*', 'type': 'email', 'label': 'false' } }) }}
+											{# <input class="form-control" type="email" placeholder="Email *" required> #}
+										</div>
+										<div class="form-group">
+											{{ form_row(form.message, { 'attr': { 'autocomplete': 'off', 'class': 'form-control', 'placeholder': 'Message*', 'type': 'text', 'label': 'false' } }) }}
+											{# <textarea class="form-control" id="" placeholder="Message *" rows="7" required></textarea> #}
+										</div>
+										<div class="form-group ">
+											<button type="submit" class="form-control btn btn-primary">Envoyer</button>
+										</div>
+									</form>
+								{{ form_end(form, {'render_rest': false}) }}
 							</div>
 						</div>
 						<div class="col-lg-4">
